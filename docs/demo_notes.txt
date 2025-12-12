@@ -1,0 +1,161 @@
+# Demo Video Script (3-5 minutes)
+
+## Video Requirements
+- **Duration**: 3-5 minutes
+- **Format**: MP4, 1080p recommended
+- **Audio**: Clear narration or text overlay explaining each step
+- **Recording Tool**: OBS Studio (free), Camtasia, or Windows Game Bar (Win+G)
+
+---
+
+## Script Outline
+
+### Segment 1: Introduction & Startup (30 seconds)
+**Actions**:
+1. Show desktop with ERP folder visible
+2. Open Visual Studio and load `ERPTestingApp.sln`
+3. Click Run (F5) to start application
+4. Application window appears with Testing Screen
+
+**Narration**:
+> "Welcome to the ERP Testing Screen application demo. This is a C# WPF desktop app built with MVVM architecture. Let's start by launching the application from Visual Studio."
+
+---
+
+### Segment 2: Master CRUD - Class Master (60 seconds)
+**Actions**:
+1. Click "📊 Class Master" in sidebar
+2. Show existing list of classes
+3. **Add**: Enter "Class 10.0" in form, click "➕ Add"
+4. Verify new class appears in list with auto-populated Created Date and Username
+5. **Edit**: Select a class, click "✏️ Edit", change name to "Class 10.5", click "💾 Update"
+6. **Delete**: Select a class, click "🗑️ Delete", confirm dialog, verify removal
+
+**Narration**:
+> "Here's the Class Master CRUD screen. I'll add a new class, edit an existing one, and delete a class. Notice how the Created Date and Username are automatically populated. The confirmation dialog prevents accidental deletions."
+
+---
+
+### Segment 3: Master CRUD - Party Master (60 seconds)
+**Actions**:
+1. Click "🏢 Party Master" in sidebar
+2. **Add**: Fill in Party Name, Contact, Email, Address
+3. Click "➕ Add", verify record appears
+4. **Email Validation**: Try entering invalid email (e.g., "test@"), show validation error
+5. Correct email and add successfully
+
+**Narration**:
+> "The Party Master includes email validation. Let me try entering an invalid email—you can see the validation error. After correcting it, the record is added successfully."
+
+---
+
+### Segment 4: Testing Screen - Auto-Calculation (90 seconds) 
+**CRITICAL SECTION - HIGHLIGHT CLEARLY**
+
+**Actions**:
+1. Click "🧪 Testing Screen" in sidebar
+2. Show the top input area
+3. **Highlight** the Points, Set, and Quantity fields (visually distinct in UI)
+4. Enter `Points = 10`
+5. Enter `Set = 5`
+6. **Zoom in or highlight** the Quantity field showing `50`
+7. Change `Points = 12`
+8. Show Quantity **instantly updating** to `60`
+9. Change `Set = 8`
+10. Show Quantity **instantly updating** to `96`
+11. Clear `Set` field
+12. Show Quantity updating to `0`
+
+**Narration**:
+> "Now for the key feature: auto-calculation. The Quantity field is calculated automatically as Points multiplied by Set. Watch as I enter Points equals 10 and Set equals 5—Quantity instantly becomes 50. When I change Points to 12, Quantity immediately updates to 60. Changing Set to 8 gives us 96. If I clear the Set field, Quantity resets to zero. This calculation is completely automatic with no manual compute button needed."
+
+**On-Screen Text Overlay** (recommended):
+```
+Formula: Quantity = Points × Set
+Points: 10, Set: 5 → Quantity: 50 ✓
+Points: 12, Set: 5 → Quantity: 60 ✓
+Points: 12, Set: 8 → Quantity: 96 ✓
+```
+
+---
+
+### Segment 5: Data Grid Operations (45 seconds)
+**Actions**:
+1. Click "➕ Add Row" button
+2. Edit cells in the grid (BD%, PriVol%, Class, Status)
+3. Add 2-3 more rows with different values
+4. Select a row and click "➖ Delete Row"
+5. Confirm deletion
+
+**Narration**:
+> "The data grid allows adding, editing, and deleting test result rows. I'll add a few rows and populate them with test data, then delete one to show the confirmation dialog."
+
+---
+
+### Segment 6: Excel Export (45 seconds)
+**Actions**:
+1. Click "📊 Export to Excel" button
+2. Show file save dialog
+3. Choose save location (Desktop recommended for visibility)
+4. File saves successfully, show success message
+5. Click "Yes" to open file
+6. Excel opens showing the exported data with formatted headers
+7. Zoom in to show columns: Sr.No, BD%, Pri.Vol%, etc.
+
+**Narration**:
+> "Let's export this data to Excel. I'll save it to the desktop. The application uses ClosedXML to create a formatted Excel file with headers and borders. Here's the result opened in Excel—all our test data is preserved with proper formatting."
+
+---
+
+### Segment 7: Validation Demonstration (30 seconds)
+**Actions**:
+1. Go to Testing Screen
+2. Try to save with empty grid → Show validation error
+3. Go to Party Master
+4. Try to add party with missing Party Name → Show required field error
+
+**Narration**:
+> "The application enforces validation. Trying to save with no grid data shows an error. Similarly, required fields like Party Name must be filled."
+
+---
+
+### Segment 8: Wrap-Up (20 seconds)
+**Actions**:
+1. Navigate back to Testing Screen
+2. Show the overall UI layout (sidebar, input area, grid, right panel)
+3. Click "🚪 Exit" button
+
+**Narration**:
+> "This completes the demo of the ERP Testing Screen application. It features master data management, instant auto-calculation, data grid operations, validation, and Excel export—all built with C# WPF and MVVM architecture. Thank you for watching!"
+
+---
+
+## Recording Tips
+- Use **screen recording software** at 1080p resolution
+- Keep mouse movements smooth and deliberate
+- Pause 2-3 seconds after each major action for viewer comprehension
+- Add **visual highlights** (circles/arrows) on Points/Set/Quantity during auto-calc demo
+- Use **text overlays** to reinforce the formula and values
+- Ensure audio is clear or add background music with text narration
+
+---
+
+## Recommended Recording Tools
+- **OBS Studio** (free, open-source) - https://obsproject.com/
+- **Camtasia** (paid, professional) - https://www.techsmith.com/video-editor.html
+- **ScreenRec** (free, simple) - https://screenrec.com/
+- **Windows Game Bar** (built-in, Win+G) - for quick recordings
+
+---
+
+## Post-Recording
+1. Edit video to remove dead time
+2. Add intro slide with project title
+3. Add outro slide with GitHub link or contact info
+4. Export as MP4 (H.264 codec, AAC audio)
+5. Save to `docs/demo_video.mp4` or upload to YouTube/Vimeo
+
+---
+
+**Total Target Duration**: 3-5 minutes
+**Focus**: Auto-calculation demo is the most critical section—allocate 90 seconds minimum!

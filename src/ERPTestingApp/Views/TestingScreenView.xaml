@@ -1,0 +1,221 @@
+<UserControl x:Class="ERPTestingApp.Views.TestingScreenView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="250"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Main Content Area -->
+        <Grid Grid.Column="0" Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Top Input Fields -->
+            <Border Grid.Row="0" BorderBrush="#BDC3C7" BorderThickness="1" Padding="10" Background="White">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Row 1 -->
+                    <StackPanel Grid.Row="0" Grid.Column="0">
+                        <Label Content="Port Name"/>
+                        <TextBox Text="{Binding TestingData.PortName, UpdateSourceTrigger=PropertyChanged}"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="0" Grid.Column="1">
+                        <Label Content="Amber"/>
+                        <TextBox Text="{Binding TestingData.Amber, UpdateSourceTrigger=PropertyChanged}"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="0" Grid.Column="2">
+                        <Label Content="CT/PT"/>
+                        <TextBox Text="{Binding TestingData.CtPt, UpdateSourceTrigger=PropertyChanged}"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="0" Grid.Column="3">
+                        <Label Content="Part Code"/>
+                        <ComboBox ItemsSource="{Binding PartCodes}" 
+                                 SelectedValue="{Binding TestingData.PartCodeId}"
+                                 DisplayMemberPath="PartCode"
+                                 SelectedValuePath="Id"/>
+                    </StackPanel>
+
+                    <!-- Row 2 -->
+                    <StackPanel Grid.Row="1" Grid.Column="0">
+                        <Label Content="Company"/>
+                        <TextBox Text="{Binding TestingData.Company, UpdateSourceTrigger=PropertyChanged}"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" Grid.Column="1">
+                        <Label Content="Phase"/>
+                        <ComboBox ItemsSource="{Binding PhaseOptions}" 
+                                 SelectedItem="{Binding TestingData.Phase}"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" Grid.Column="2">
+                        <Label Content="Ratio"/>
+                        <TextBox Text="{Binding TestingData.Ratio, UpdateSourceTrigger=PropertyChanged}"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" Grid.Column="3">
+                        <Label Content="Jobcard No"/>
+                        <TextBox Text="{Binding TestingData.JobcardNo, UpdateSourceTrigger=PropertyChanged}"/>
+                    </StackPanel>
+
+                    <!-- Row 3 - AUTO-CALCULATION FIELDS -->
+                    <StackPanel Grid.Row="2" Grid.Column="0">
+                        <Label Content="Sec"/>
+                        <TextBox Text="{Binding TestingData.Sec, UpdateSourceTrigger=PropertyChanged}"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="2" Grid.Column="1" Background="#FFF8DC">
+                        <Label Content="Points ⚡" FontWeight="Bold"/>
+                        <TextBox Text="{Binding TestingData.Points, UpdateSourceTrigger=PropertyChanged}" 
+                                FontWeight="Bold" BorderBrush="#FF6B6B" BorderThickness="2"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="2" Grid.Column="2" Background="#FFF8DC">
+                        <Label Content="Set ⚡" FontWeight="Bold"/>
+                        <TextBox Text="{Binding TestingData.Set, UpdateSourceTrigger=PropertyChanged}" 
+                                FontWeight="Bold" BorderBrush="#FF6B6B" BorderThickness="2"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="2" Grid.Column="3" Background="#E8FFE8">
+                        <Label Content="Quantity (Auto) 🔄" FontWeight="Bold"/>
+                        <TextBox Text="{Binding TestingData.Quantity, Mode=OneWay}" 
+                                IsReadOnly="True" FontWeight="Bold" 
+                                Background="#D4EDDA" BorderBrush="#28A745" BorderThickness="2"/>
+                    </StackPanel>
+
+                    <!-- Row 4 -->
+                    <StackPanel Grid.Row="3" Grid.Column="0">
+                        <Label Content="PO No"/>
+                        <TextBox Text="{Binding TestingData.PoNo, UpdateSourceTrigger=PropertyChanged}"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="3" Grid.Column="1">
+                        <Label Content="Invoice No"/>
+                        <TextBox Text="{Binding TestingData.InvoiceNo, UpdateSourceTrigger=PropertyChanged}"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="3" Grid.Column="2">
+                        <Label Content="Serial No"/>
+                        <TextBox Text="{Binding TestingData.SerialNo, UpdateSourceTrigger=PropertyChanged}"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="3" Grid.Column="3">
+                        <Label Content="JC Qty"/>
+                        <TextBox Text="{Binding TestingData.JcQty, UpdateSourceTrigger=PropertyChanged}"/>
+                    </StackPanel>
+
+                    <!-- Row 5 -->
+                    <StackPanel Grid.Row="4" Grid.Column="0">
+                        <Label Content="Partial Qty"/>
+                        <TextBox Text="{Binding TestingData.PartialQty, UpdateSourceTrigger=PropertyChanged}"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="4" Grid.Column="1">
+                        <Label Content="IEC Standard"/>
+                        <ComboBox ItemsSource="{Binding IECStandards}" 
+                                 SelectedValue="{Binding TestingData.IecStandardId}"
+                                 DisplayMemberPath="IECStandard"
+                                 SelectedValuePath="Id"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="4" Grid.Column="2">
+                        <Label Content="Model"/>
+                        <ComboBox ItemsSource="{Binding Models}" 
+                                 SelectedValue="{Binding TestingData.ModelId}"
+                                 DisplayMemberPath="ModelName"
+                                 SelectedValuePath="Id"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="4" Grid.Column="3">
+                        <Label Content="FS"/>
+                        <TextBox Text="{Binding TestingData.Fs, UpdateSourceTrigger=PropertyChanged}"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <!-- Data Grid -->
+            <Border Grid.Row="1" BorderBrush="#BDC3C7" BorderThickness="1" Margin="0,10,0,0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Grid Toolbar -->
+                    <Border Grid.Row="0" Background="#F8F9FA" Padding="5" BorderBrush="#DEE2E6" BorderThickness="0,0,0,1">
+                        <StackPanel Orientation="Horizontal">
+                            <Button Content="➕ Add Row" Command="{Binding AddGridRowCommand}" Background="#28A745" Foreground="White"/>
+                            <Button Content="➖ Delete Row" Command="{Binding DeleteGridRowCommand}" 
+                                   CommandParameter="{Binding ElementName=TestingGrid, Path=SelectedItem}"
+                                   Background="#DC3545" Foreground="White"/>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Grid -->
+                    <DataGrid Grid.Row="1" x:Name="TestingGrid"
+                             ItemsSource="{Binding TestingData.GridRows}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Sr.No" Binding="{Binding SrNo}" Width="60" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="BD %" Binding="{Binding BdPercent}" Width="80"/>
+                            <DataGridTextColumn Header="Pri.Vol %" Binding="{Binding PriVolPercent}" Width="90"/>
+                            <DataGridTextColumn Header="Excitation %" Binding="{Binding ExcitationPercent}" Width="110"/>
+                            <DataGridTextColumn Header="Ratio Error %" Binding="{Binding RatioErrorPercent}" Width="120"/>
+                            <DataGridTextColumn Header="Phase Error (MIN)" Binding="{Binding PhaseErrorMin}" Width="140"/>
+                            <DataGridTextColumn Header="Class" Binding="{Binding ClassValue}" Width="100"/>
+                            <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </Border>
+
+            <!-- Action Buttons -->
+            <Border Grid.Row="2" Padding="10" BorderBrush="#BDC3C7" BorderThickness="1,0,1,1" Background="#F8F9FA">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Content="💾 Save" Command="{Binding SaveCommand}" 
+                           Background="#007BFF" Foreground="White" Width="100" Height="35"/>
+                    <Button Content="🆕 New" Command="{Binding NewCommand}" 
+                           Background="#6C757D" Foreground="White" Width="100" Height="35"/>
+                    <Button Content="🖨️ Print" Command="{Binding PrintCommand}" 
+                           Background="#17A2B8" Foreground="White" Width="100" Height="35"/>
+                    <Button Content="📊 Export to Excel" Command="{Binding ExportToExcelCommand}" 
+                           Background="#28A745" Foreground="White" Width="140" Height="35"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+
+        <!-- Right Panel -->
+        <Border Grid.Column="1" BorderBrush="#BDC3C7" BorderThickness="1" Margin="5" Padding="10" Background="White">
+            <StackPanel>
+                <TextBlock Text="Settings" FontSize="16" FontWeight="Bold" Margin="0,0,0,10"/>
+                
+                <Label Content="Revision No"/>
+                <TextBox Text="{Binding TestingData.RevisionNo, UpdateSourceTrigger=PropertyChanged}"/>
+                
+                <Label Content="Revision Date"/>
+                <DatePicker SelectedDate="{Binding TestingData.RevisionDate}"/>
+                
+                <CheckBox Content="Prefix Enabled" IsChecked="{Binding TestingData.PrefixEnabled}" Margin="4,10,4,4"/>
+                <TextBox Text="{Binding TestingData.PrefixText, UpdateSourceTrigger=PropertyChanged}" 
+                        IsEnabled="{Binding TestingData.PrefixEnabled}"/>
+                
+                <CheckBox Content="Auto Printing" IsChecked="{Binding TestingData.AutoPrinting}" Margin="4,10,4,4"/>
+                
+                <Label Content="VF"/>
+                <TextBox Text="{Binding TestingData.Vf, UpdateSourceTrigger=PropertyChanged}"/>
+                
+                <Label Content="HSV"/>
+                <TextBox Text="{Binding TestingData.Hsv, UpdateSourceTrigger=PropertyChanged}"/>
+ <Label Content="kV"/>
+                <TextBox Text="{Binding TestingData.Kv, UpdateSourceTrigger=PropertyChanged}"/>
+                
+                <Label Content="IL"/>
+                <TextBox Text="{Binding TestingData.Il, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

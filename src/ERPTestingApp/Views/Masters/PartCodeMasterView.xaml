@@ -1,0 +1,85 @@
+<UserControl x:Class="ERPTestingApp.Views.Masters.PartCodeMasterView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" BorderBrush="#BDC3C7" BorderThickness="1" Padding="15" Background="White" Margin="0,0,0,10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" Grid.Column="0" Margin="0,0,10,0">
+                    <Label Content="Part Code" FontWeight="Bold"/>
+                    <TextBox Text="{Binding PartCode, UpdateSourceTrigger=PropertyChanged}" Height="30"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2">
+                    <Label Content="Item Description"/>
+                    <TextBox Text="{Binding ItemDescription, UpdateSourceTrigger=PropertyChanged}" Height="30"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" Grid.Column="0" Margin="0,0,10,0">
+                    <Label Content="Class"/>
+                    <ComboBox ItemsSource="{Binding Classes}" DisplayMemberPath="ClassName" SelectedValuePath="Id" SelectedValue="{Binding SelectedClassId}" Height="30"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" Grid.Column="1" Margin="0,0,10,0">
+                    <Label Content="VA"/>
+                    <ComboBox ItemsSource="{Binding VAs}" DisplayMemberPath="VAName" SelectedValuePath="Id" SelectedValue="{Binding SelectedVAId}" Height="30"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" Grid.Column="2">
+                    <Label Content="Ratio"/>
+                    <TextBox Text="{Binding Ratio, UpdateSourceTrigger=PropertyChanged}" Height="30"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="2" Grid.Column="0" Margin="0,0,10,0">
+                    <Label Content="Label Type"/>
+                    <ComboBox ItemsSource="{Binding LabelTypes}" SelectedItem="{Binding SelectedLabelType}" Height="30"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                    <Button Content="➕ Add" Command="{Binding AddCommand}" Background="#28A745" Foreground="White" Width="100" 
+                            Visibility="{Binding IsEditMode, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=Invert}"/>
+                    <Button Content="💾 Update" Command="{Binding UpdateCommand}" Background="#007BFF" Foreground="White" Width="100" 
+                            Visibility="{Binding IsEditMode, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                    <Button Content="❌ Cancel" Command="{Binding CancelCommand}" Background="#6C757D" Foreground="White" Width="100" 
+                            Visibility="{Binding IsEditMode, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <DataGrid Grid.Row="1" ItemsSource="{Binding PartCodes}" SelectedItem="{Binding SelectedPartCode}" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Part Code" Binding="{Binding PartCode}" Width="120"/>
+                <DataGridTextColumn Header="Description" Binding="{Binding ItemDescription}" Width="*"/>
+                <DataGridTextColumn Header="Class" Binding="{Binding ClassName}" Width="100"/>
+                <DataGridTextColumn Header="VA" Binding="{Binding VAName}" Width="80"/>
+                <DataGridTextColumn Header="Ratio" Binding="{Binding Ratio}" Width="80"/>
+                <DataGridTextColumn Header="Label" Binding="{Binding LabelType}" Width="80"/>
+                <DataGridTemplateColumn Header="Actions" Width="150">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Content="✏️ Edit" Command="{Binding DataContext.EditCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" Background="#FFC107" Margin="2"/>
+                                <Button Content="🗑️ Delete" Command="{Binding DataContext.DeleteCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" Background="#DC3545" Foreground="White" Margin="2"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

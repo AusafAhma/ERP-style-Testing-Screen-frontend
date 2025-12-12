@@ -1,0 +1,118 @@
+<Window x:Class="ERPTestingApp.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:views="clr-namespace:ERPTestingApp.Views"
+        xmlns:vm="clr-namespace:ERPTestingApp.ViewModels"
+        Title="ERP Testing Screen Application" 
+        Height="800" Width="1400"
+        WindowStartupLocation="CenterScreen">
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Left Sidebar Navigation -->
+        <Border Grid.Column="0" Background="#2C3E50" Padding="10">
+            <StackPanel>
+                <TextBlock Text="ERP TESTING" 
+                          Foreground="White" 
+                          FontSize="18" 
+                          FontWeight="Bold" 
+                          Margin="0,0,0,20"/>
+                
+                <Button Content="🧪 Testing Screen" 
+                        Command="{Binding NavigateToTestingScreenCommand}"
+                        Background="#34495E" 
+                        Foreground="White"
+                        HorizontalAlignment="Stretch"
+                        Height="40"
+                        Margin="0,0,0,5"/>
+                
+                <TextBlock Text="MASTER MODULES" 
+                          Foreground="#95A5A6" 
+                          FontSize="10" 
+                          Margin="0,15,0,5"/>
+                
+                <Button Content="📊 Class Master" 
+                        Command="{Binding NavigateToClassMasterCommand}"
+                        Background="#34495E" 
+                        Foreground="White"
+                        HorizontalAlignment="Stretch"
+                        Height="35"
+                        Margin="0,0,0,5"/>
+                
+                <Button Content="🏢 Party Master" 
+                        Command="{Binding NavigateToPartyMasterCommand}"
+                        Background="#34495E" 
+                        Foreground="White"
+                        HorizontalAlignment="Stretch"
+                        Height="35"
+                        Margin="0,0,0,5"/>
+
+                <Button Content="⚡ VA Master" Command="{Binding NavigateToVAMasterCommand}" Background="#34495E" Foreground="White" Height="35" Margin="0,0,0,5"/>
+                <Button Content="📜 IEC Master" Command="{Binding NavigateToIECMasterCommand}" Background="#34495E" Foreground="White" Height="35" Margin="0,0,0,5"/>
+                <Button Content="🏷️ Label Master" Command="{Binding NavigateToLabelMasterCommand}" Background="#34495E" Foreground="White" Height="35" Margin="0,0,0,5"/>
+                <Button Content="⚙️ Part Code Master" Command="{Binding NavigateToPartCodeMasterCommand}" Background="#34495E" Foreground="White" Height="35" Margin="0,0,0,5"/>
+                <Button Content="🔌 Model Master" Command="{Binding NavigateToModelMasterCommand}" Background="#34495E" Foreground="White" Height="35" Margin="0,0,0,5"/>
+
+                <Separator Margin="0,20,0,10" Background="#34495E"/>
+                
+                <Button Content="🚪 Exit" 
+                        Command="{Binding ExitCommand}"
+                        Background="#E74C3C" 
+                        Foreground="White"
+                        HorizontalAlignment="Stretch"
+                        Height="35"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Main Content Area -->
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Header -->
+            <Border Grid.Row="0" Background="#ECF0F1" Padding="15,10" BorderBrush="#BDC3C7" BorderThickness="0,0,0,1">
+                <TextBlock Text="{Binding CurrentViewTitle}" 
+                          FontSize="20" 
+                          FontWeight="Bold" 
+                          Foreground="#2C3E50"/>
+            </Border>
+
+            <!-- Dynamic Content Area -->
+            <ContentControl Grid.Row="1" Content="{Binding CurrentViewModel}" Margin="10">
+                <ContentControl.Resources>
+                    <!-- Data Templates for different ViewModels -->
+                    <DataTemplate DataType="{x:Type vm:TestingScreenViewModel}">
+                        <views:TestingScreenView/>
+                    </DataTemplate>
+                    <DataTemplate DataType="{x:Type vm:Masters.ClassMasterViewModel}">
+                        <views:Masters.ClassMasterView/>
+                    </DataTemplate>
+                    <DataTemplate DataType="{x:Type vm:Masters.PartyMasterViewModel}">
+                        <views:Masters.PartyMasterView/>
+                    </DataTemplate>
+                    <DataTemplate DataType="{x:Type vm:Masters.VAMasterViewModel}">
+                        <views:Masters.VAMasterView/>
+                    </DataTemplate>
+                    <DataTemplate DataType="{x:Type vm:Masters.IECStandardMasterViewModel}">
+                        <views:Masters.IECStandardMasterView/>
+                    </DataTemplate>
+                    <DataTemplate DataType="{x:Type vm:Masters.LabelMasterViewModel}">
+                        <views:Masters.LabelMasterView/>
+                    </DataTemplate>
+                    <DataTemplate DataType="{x:Type vm:Masters.PartCodeMasterViewModel}">
+                        <views:Masters.PartCodeMasterView/>
+                    </DataTemplate>
+                    <DataTemplate DataType="{x:Type vm:Masters.ModelMasterViewModel}">
+                        <views:Masters.ModelMasterView/>
+                    </DataTemplate>
+                </ContentControl.Resources>
+            </ContentControl>
+        </Grid>
+    </Grid>
+</Window>
