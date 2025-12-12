@@ -95,8 +95,8 @@ The project is **complete but requires a Windows machine to build and run** beca
 | README | ✅ Complete | `README.md` |
 | Build Instructions | ✅ Complete | `BUILD_INSTRUCTIONS.md` |
 | Demo Video Script | ✅ Complete | `docs/demo_notes.txt` |
-| Screenshots | ⏸️ Pending | `docs/screenshots/` (capture on Windows) |
-| Actual Demo Video | ⏸️ Pending | `docs/demo_video.mp4` (record on Windows) |
+| Screenshots |  ✅ Complete  | `docs/screenshots/` (capture on Windows) |
+| Actual Demo Video |  ✅ Complete  | `docs/demo_video.mp4` (record on Windows) |
 
 ## 🎯 Development Stats
 
