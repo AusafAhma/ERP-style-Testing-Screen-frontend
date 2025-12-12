@@ -1,8 +1,10 @@
 # Demo Video
 
-This video demonstrates the ERP Testing Screen application.
+## 📺 Watch on YouTube
 
-**📽️ [Click here to view/download Demo.mov](Demo.mov)**
+[![ERP Testing Screen Demo](https://img.youtube.com/vi/wSm0rt2lDIs/maxresdefault.jpg)](https://youtu.be/wSm0rt2lDIs)
+
+**👆 Click the image above or use this link:** [https://youtu.be/wSm0rt2lDIs](https://youtu.be/wSm0rt2lDIs)
 
 ## What the demo shows
 

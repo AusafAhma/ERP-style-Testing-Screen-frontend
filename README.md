@@ -316,7 +316,11 @@ If this were a production application, I would add:
 
 ## 🎬 Demo Video
 
-A 3-5 minute demonstration video showing:
+[![ERP Testing Screen Demo](https://img.youtube.com/vi/wSm0rt2lDIs/maxresdefault.jpg)](https://youtu.be/wSm0rt2lDIs)
+
+**▶️ [Watch Demo on YouTube](https://youtu.be/wSm0rt2lDIs)**
+
+The demo shows:
 
 1. **Application Startup** - Opening the solution and running
 2. **Master CRUD** - Add/Edit/Delete in Class and Party Master
@@ -325,10 +329,6 @@ A 3-5 minute demonstration video showing:
 5. **Grid Operations** - Add/Edit/Delete rows
 6. **Excel Export** - Export grid to .xlsx file
 7. **Navigation** - Sidebar menu switching
-
-📹 **Video Location**: `docs/Demo.mp4`
-
-> Video script available in `docs/demo_notes.txt`
 
 ---
 
