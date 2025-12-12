@@ -68,52 +68,6 @@ The application window should appear!
 
 ---
 
-## 🎬 STEP 3: Record Demo Video
-
-### Recommended Tool: Windows Game Bar (Built-in)
-
-1. Open the ERP application
-2. Press **Win + G** to open Game Bar
-3. Click the **Record** button (or press **Win + Alt + R**)
-4. Perform these actions:
-
-**Demo Script (3-5 minutes):**
-
-```
-0:00 - 0:30  Application startup
-             - Show Visual Studio
-             - Press F5 to run
-             - Show main window
-
-0:30 - 1:30  Class Master CRUD
-             - Click "Class Master" in sidebar
-             - Add a new class
-             - Edit the class
-             - Delete the class
-
-1:30 - 2:30  Testing Screen
-             - Click "Testing Screen"
-             - Show top inputs
-             - TYPE Points = 10
-             - TYPE Set = 5
-             - SHOW Quantity = 50 (IMPORTANT!)
-             - Change values to show instant update
-
-2:30 - 3:30  Grid Operations
-             - Click "Add Row" multiple times
-             - Enter data in cells
-             - Delete a row
-
-3:30 - 4:30  Excel Export
-             - Click "Export to Excel"
-             - Choose save location
-             - Open the exported file
-
-4:30 - 5:00  Wrap up
-             - Show sidebar navigation
-             - Exit application
-```
-
 5. Press **Win + Alt + R** again to stop recording
 6. Video saves to: `C:\Users\YourName\Videos\Captures\`
 7. Rename to `Demo.mp4` and copy to `docs/` folder
