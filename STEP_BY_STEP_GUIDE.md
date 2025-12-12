@@ -1,4 +1,4 @@
-# 📖 Complete Step-by-Step Guide
+# 📖 Complete Step-by-Step  for Windows
 
 ## ✅ GitHub Push Complete
 
@@ -195,6 +195,46 @@ https://github.com/AusafAhma/ERP-style-Testing-Screen-frontend
 - [ ] Uploaded screenshots to docs/
 - [ ] Uploaded or linked demo video
 - [ ] Pushed all changes to GitHub
+
+---
+
+---
+
+## 🍎 STEP 6: For Mac Users
+
+Since WPF is Windows-only, Mac users have the following options:
+
+### Option 1: Use the Cross-Platform Web Version (Recommended)
+
+A React web version is available in the `web/` folder that runs on any platform:
+
+```bash
+cd web
+npm install
+npm run dev
+# Open http://localhost:5173
+```
+
+### Option 2: Windows Virtual Machine
+
+Set up a Windows VM on your Mac. See **[MACOS_GUIDE.md](./MACOS_GUIDE.md)** for detailed instructions:
+
+- **UTM** (Free) - Recommended for Apple Silicon Macs
+- **Parallels Desktop** (Paid) - Best performance
+- **VMware Fusion** (Free for personal use)
+
+### Option 3: Boot Camp (Intel Macs Only)
+
+If you have an Intel-based Mac, you can dual-boot Windows:
+
+1. Go to **Applications > Utilities > Boot Camp Assistant**
+2. Follow the prompts to install Windows 10/11
+3. Restart and select Windows from the boot menu
+
+### Option 4: Remote Windows Access
+
+- Use a Windows PC remotely via **Remote Desktop**
+- Azure Virtual Desktop or Windows 365 (paid cloud options)
 
 ---
 

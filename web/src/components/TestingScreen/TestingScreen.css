@@ -1,0 +1,364 @@
+.testing-screen {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 24px;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Main Content Area */
+.testing-main {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Top Input Card */
+.input-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.input-card-header {
+    padding: 16px 24px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+}
+
+.input-card-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.input-card-body {
+    padding: 24px;
+}
+
+.input-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.input-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #555;
+}
+
+.input-group input,
+.input-group select {
+    padding: 12px 14px;
+    border: 2px solid #e0e5ec;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    background: #fff;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
+}
+
+/* Auto-Calculation Highlight */
+.calc-highlight {
+    background: linear-gradient(135deg, #fff8dc 0%, #fff5c3 100%);
+    border-radius: 12px;
+    padding: 4px;
+}
+
+.calc-highlight input {
+    border-color: #ffc107;
+    font-weight: 600;
+}
+
+.calc-highlight label {
+    color: #d48806;
+}
+
+.calc-result {
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+    border-radius: 12px;
+    padding: 4px;
+}
+
+.calc-result input {
+    background: #d4edda;
+    border-color: #28a745;
+    font-weight: 700;
+    color: #155724;
+    cursor: not-allowed;
+}
+
+.calc-result label {
+    color: #155724;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.calc-formula {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, #e8f4fd 0%, #d1ecf1 100%);
+    border-radius: 12px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.calc-formula span {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #0c5460;
+}
+
+.calc-formula .operator {
+    font-size: 1.4rem;
+    color: #667eea;
+}
+
+.calc-formula .equals {
+    font-size: 1.4rem;
+    color: #28a745;
+}
+
+.calc-formula .result-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #155724;
+    background: #d4edda;
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+
+/* Grid Card */
+.grid-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    flex: 1;
+}
+
+.grid-toolbar {
+    padding: 16px 24px;
+    background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
+    border-bottom: 1px solid #e0e5ec;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.grid-container {
+    max-height: 400px;
+    overflow: auto;
+}
+
+.testing-grid {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.testing-grid thead {
+    background: linear-gradient(135deg, #f0f4ff 0%, #e8ecff 100%);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.testing-grid th {
+    padding: 14px 12px;
+    text-align: left;
+    font-weight: 600;
+    color: #444;
+    border-bottom: 2px solid #e0e5ec;
+    white-space: nowrap;
+}
+
+.testing-grid td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #f0f2f5;
+}
+
+.testing-grid tbody tr:hover {
+    background: #f8f9ff;
+}
+
+.testing-grid input {
+    width: 100%;
+    padding: 8px 10px;
+    border: 2px solid #e0e5ec;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.testing-grid input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.testing-grid .sr-no {
+    width: 60px;
+    text-align: center;
+    font-weight: 600;
+    color: #667eea;
+}
+
+.testing-grid .actions {
+    width: 80px;
+}
+
+/* Action Buttons Row */
+.action-buttons {
+    padding: 20px 24px;
+    background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+/* Right Panel */
+.settings-panel {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    height: fit-content;
+    position: sticky;
+    top: 24px;
+}
+
+.settings-header {
+    padding: 16px 20px;
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    color: #fff;
+}
+
+.settings-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.settings-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.setting-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.setting-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #555;
+}
+
+.setting-group input[type="text"],
+.setting-group input[type="date"] {
+    padding: 10px 12px;
+    border: 2px solid #e0e5ec;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+.setting-group input:focus {
+    outline: none;
+    border-color: #11998e;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    background: #f8f9ff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.checkbox-group:hover {
+    background: #f0f4ff;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #11998e;
+}
+
+.checkbox-group span {
+    font-size: 0.9rem;
+    color: #444;
+}
+
+/* Empty State */
+.grid-empty {
+    padding: 48px 24px;
+    text-align: center;
+    color: #888;
+}
+
+.grid-empty .icon {
+    font-size: 3rem;
+    margin-bottom: 16px;
+    opacity: 0.5;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .testing-screen {
+        grid-template-columns: 1fr;
+    }
+
+    .settings-panel {
+        position: static;
+    }
+
+    .input-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .input-grid {
+        grid-template-columns: 1fr;
+    }
+}
